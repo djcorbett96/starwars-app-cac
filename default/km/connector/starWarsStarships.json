@@ -1,0 +1,189 @@
+{
+  "$id": "starWarsStarships",
+  "$schema": "https://schema.yext.com/config/km/connector/v3",
+  "displayName": "Star Wars Starships",
+  "entityType": "ce_starship",
+  "source": {
+    "sourceConfig": {
+      "apiPullConfig": {
+        "requestType": "GET",
+        "url": "https://swapi.dev/api/starships/",
+        "paginationControl": {
+          "cursorPagination": {
+            "cursor": "next",
+            "cursorType": "FULL_URL",
+            "detectCursorInHeader": false
+          }
+        },
+        "headers": {},
+        "queryParams": {},
+        "dataFormat": "JSON"
+      }
+    },
+    "baseSelector": {
+      "type": "JSON",
+      "header": "Entity Container",
+      "path": "results"
+    },
+    "selectors": [
+      {
+        "type": "JSON",
+        "header": "name",
+        "path": "name"
+      },
+      {
+        "type": "JSON",
+        "header": "model",
+        "path": "model"
+      },
+      {
+        "type": "JSON",
+        "header": "manufacturer",
+        "path": "manufacturer"
+      },
+      {
+        "type": "JSON",
+        "header": "cost_in_credits",
+        "path": "cost_in_credits"
+      },
+      {
+        "type": "JSON",
+        "header": "length",
+        "path": "length"
+      },
+      {
+        "type": "JSON",
+        "header": "max_atmosphering_speed",
+        "path": "max_atmosphering_speed"
+      },
+      {
+        "type": "JSON",
+        "header": "crew",
+        "path": "crew"
+      },
+      {
+        "type": "JSON",
+        "header": "passengers",
+        "path": "passengers"
+      },
+      {
+        "type": "JSON",
+        "header": "cargo_capacity",
+        "path": "cargo_capacity"
+      },
+      {
+        "type": "JSON",
+        "header": "consumables",
+        "path": "consumables"
+      },
+      {
+        "type": "JSON",
+        "header": "hyperdrive_rating",
+        "path": "hyperdrive_rating"
+      },
+      {
+        "type": "JSON",
+        "header": "MGLT",
+        "path": "MGLT"
+      },
+      {
+        "type": "JSON",
+        "header": "starship_class",
+        "path": "starship_class"
+      },
+      {
+        "type": "JSON",
+        "header": "pilots",
+        "path": "pilots"
+      },
+      {
+        "type": "JSON",
+        "header": "films",
+        "path": "films"
+      },
+      {
+        "type": "JSON",
+        "header": "created",
+        "path": "created"
+      },
+      {
+        "type": "JSON",
+        "header": "edited",
+        "path": "edited"
+      },
+      {
+        "type": "JSON",
+        "header": "url",
+        "path": "url"
+      }
+    ]
+  },
+  "transforms": [
+    {
+      "findAndReplace": {
+        "inputHeaders": {
+          "headers": [
+            "cost_in_credits"
+          ]
+        },
+        "valueToFind": {
+          "plainText": {
+            "value": "unknown",
+            "ignoreCase": false
+          }
+        },
+        "replacement": ""
+      }
+    },
+    {
+      "function": {
+        "inputHeaders": {
+          "headers": [
+            "pilots",
+            "films",
+            "url"
+          ]
+        },
+        "plugin": "ConvertEndpointList",
+        "function": "fetchEndpointsInfo"
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "field": "c_associatedMovies",
+      "header": "films",
+      "subfieldPath": []
+    },
+    {
+      "field": "c_pilots",
+      "header": "pilots",
+      "subfieldPath": []
+    },
+    {
+      "field": "c_costInCredits",
+      "header": "cost_in_credits",
+      "subfieldPath": []
+    },
+    {
+      "field": "name",
+      "header": "name",
+      "subfieldPath": []
+    },
+    {
+      "field": "c_model",
+      "header": "model",
+      "subfieldPath": []
+    },
+    {
+      "field": "entityId",
+      "header": "url",
+      "subfieldPath": []
+    },
+    {
+      "field": "c_manufacturer",
+      "header": "manufacturer",
+      "subfieldPath": []
+    }
+  ]
+}

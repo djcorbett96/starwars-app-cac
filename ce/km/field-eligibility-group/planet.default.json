@@ -1,0 +1,14 @@
+{
+  "$id": "ce_planet.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Planet-default",
+  "entityType": "ce_planet",
+  "fields": [
+    "c_associatedMovies",
+    "c_climate",
+    "c_population",
+    "c_residents",
+    "c_terrain"
+  ],
+  "required": []
+}

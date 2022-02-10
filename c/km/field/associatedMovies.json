@@ -1,0 +1,16 @@
+{
+  "$id": "c_associatedMovies",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Associated Movies",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "listType": {
+      "typeId": "entityReference",
+      "type": {
+        "entityReferenceType": {}
+      }
+    }
+  },
+  "typeId": "list"
+}

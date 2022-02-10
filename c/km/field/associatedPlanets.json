@@ -1,0 +1,16 @@
+{
+  "$id": "c_associatedPlanets",
+  "$schema": "https://schema.yext.com/config/km/field/v1",
+  "displayName": "Associated Planets",
+  "group": "NONE",
+  "localization": "PRIMARY_ONLY",
+  "type": {
+    "listType": {
+      "typeId": "entityReference",
+      "type": {
+        "entityReferenceType": {}
+      }
+    }
+  },
+  "typeId": "list"
+}

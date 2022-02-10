@@ -1,0 +1,17 @@
+{
+  "$id": "ce_movie.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Movie-default",
+  "entityType": "ce_movie",
+  "fields": [
+    "c_associatedCharacters",
+    "c_associatedPlanets",
+    "c_associatedShips",
+    "c_director",
+    "c_episodeNumber",
+    "c_openingCrawlText",
+    "c_producers",
+    "c_releaseDate"
+  ],
+  "required": []
+}

@@ -1,0 +1,13 @@
+{
+  "$id": "ce_character.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Character-default",
+  "entityType": "ce_character",
+  "fields": [
+    "c_associatedMovies",
+    "c_associatedShips",
+    "c_birthYear",
+    "c_homeworld"
+  ],
+  "required": []
+}

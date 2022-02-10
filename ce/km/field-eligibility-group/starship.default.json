@@ -1,0 +1,14 @@
+{
+  "$id": "ce_starship.default",
+  "$schema": "https://schema.yext.com/config/km/field-eligibility-group/v1",
+  "name": "Starship-default",
+  "entityType": "ce_starship",
+  "fields": [
+    "c_associatedMovies",
+    "c_costInCredits",
+    "c_manufacturer",
+    "c_model",
+    "c_pilots"
+  ],
+  "required": []
+}

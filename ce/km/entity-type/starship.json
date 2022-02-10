@@ -1,0 +1,7 @@
+{
+  "$id": "ce_starship",
+  "$schema": "https://schema.yext.com/config/km/entity-type/v1",
+  "description": "",
+  "displayName": "Starship",
+  "pluralDisplayName": "Starships"
+}

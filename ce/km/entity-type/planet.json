@@ -1,0 +1,7 @@
+{
+  "$id": "ce_planet",
+  "$schema": "https://schema.yext.com/config/km/entity-type/v1",
+  "description": "",
+  "displayName": "Planet",
+  "pluralDisplayName": "Planets"
+}

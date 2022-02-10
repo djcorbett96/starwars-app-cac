@@ -1,0 +1,162 @@
+{
+  "$id": "starWarsMovies",
+  "$schema": "https://schema.yext.com/config/km/connector/v3",
+  "displayName": "Star Wars Movies",
+  "entityType": "ce_movie",
+  "source": {
+    "sourceConfig": {
+      "apiPullConfig": {
+        "requestType": "GET",
+        "url": "https://swapi.dev/api/films/",
+        "headers": {},
+        "queryParams": {},
+        "dataFormat": "JSON"
+      }
+    },
+    "baseSelector": {
+      "type": "JSON",
+      "header": "Entity Container",
+      "path": "results"
+    },
+    "selectors": [
+      {
+        "type": "JSON",
+        "header": "title",
+        "path": "title"
+      },
+      {
+        "type": "JSON",
+        "header": "episode_id",
+        "path": "episode_id"
+      },
+      {
+        "type": "JSON",
+        "header": "opening_crawl",
+        "path": "opening_crawl"
+      },
+      {
+        "type": "JSON",
+        "header": "director",
+        "path": "director"
+      },
+      {
+        "type": "JSON",
+        "header": "producer",
+        "path": "producer"
+      },
+      {
+        "type": "JSON",
+        "header": "release_date",
+        "path": "release_date"
+      },
+      {
+        "type": "JSON",
+        "header": "characters",
+        "path": "characters"
+      },
+      {
+        "type": "JSON",
+        "header": "planets",
+        "path": "planets"
+      },
+      {
+        "type": "JSON",
+        "header": "starships",
+        "path": "starships"
+      },
+      {
+        "type": "JSON",
+        "header": "vehicles",
+        "path": "vehicles"
+      },
+      {
+        "type": "JSON",
+        "header": "species",
+        "path": "species"
+      },
+      {
+        "type": "JSON",
+        "header": "created",
+        "path": "created"
+      },
+      {
+        "type": "JSON",
+        "header": "edited",
+        "path": "edited"
+      },
+      {
+        "type": "JSON",
+        "header": "url",
+        "path": "url"
+      }
+    ]
+  },
+  "transforms": [
+    {
+      "function": {
+        "inputHeaders": {
+          "headers": [
+            "characters",
+            "planets",
+            "starships",
+            "url"
+          ]
+        },
+        "plugin": "ConvertEndpointList",
+        "function": "fetchEndpointsInfo"
+      }
+    }
+  ],
+  "mappings": [
+    {
+      "field": "name",
+      "header": "title",
+      "subfieldPath": []
+    },
+    {
+      "field": "c_episodeNumber",
+      "header": "episode_id",
+      "subfieldPath": []
+    },
+    {
+      "field": "c_openingCrawlText",
+      "header": "opening_crawl",
+      "subfieldPath": []
+    },
+    {
+      "field": "c_director",
+      "header": "director",
+      "subfieldPath": []
+    },
+    {
+      "field": "c_producers",
+      "header": "producer",
+      "subfieldPath": []
+    },
+    {
+      "field": "c_releaseDate",
+      "header": "release_date",
+      "subfieldPath": []
+    },
+    {
+      "field": "c_associatedCharacters",
+      "header": "characters",
+      "subfieldPath": []
+    },
+    {
+      "field": "c_associatedPlanets",
+      "header": "planets",
+      "subfieldPath": []
+    },
+    {
+      "field": "c_associatedShips",
+      "header": "starships",
+      "subfieldPath": []
+    },
+    {
+      "field": "entityId",
+      "header": "url",
+      "subfieldPath": []
+    }
+  ]
+}
